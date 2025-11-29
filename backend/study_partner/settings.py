@@ -40,11 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Third party apps
+    'rest_framework', # We need this for the API
+    'django_celery_results', # Since you have celery.py
+    
+    # Local apps
+    'core',
     'users',
     'plans',
     'tasks',
-    'core',
 ]
+
+# Point to our custom user model
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
